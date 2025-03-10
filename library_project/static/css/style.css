@@ -1,0 +1,423 @@
+/* Custom styles for School 300 Library - Updated Design */
+
+:root {
+    --primary-color: #222222;
+    --primary-dark: #000000;
+    --primary-light: #444444;
+    --secondary-color: #777777;
+    --text-color: #333333;
+    --bg-color: #f8f8f8;
+    --border-radius: 8px;
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s ease;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* Header and Navbar */
+.navbar {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-dark {
+    background-color: var(--primary-color) !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.85);
+    transition: var(--transition);
+    margin: 0 3px;
+    padding: 8px 15px;
+    border-radius: var(--border-radius);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Replace logo with icon */
+.navbar-brand::before {
+    content: "\f02d"; /* Font Awesome book icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+/* Cards */
+.card {
+    border-radius: var(--border-radius);
+    border: none;
+    overflow: hidden;
+    transition: var(--transition);
+    box-shadow: var(--box-shadow);
+    background-color: white;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.card-header {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    border-bottom: none;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Buttons with hover effect */
+.btn {
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    padding: 8px 20px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    background-color: rgba(255, 255, 255, 0.15);
+    transition: var(--transition);
+}
+
+.btn:hover::after {
+    left: 0;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Alerts */
+.alert {
+    border-radius: var(--border-radius);
+    border: none;
+    box-shadow: var(--box-shadow);
+    padding: 12px 20px;
+}
+
+/* Form controls */
+.form-control, .form-select {
+    border-radius: var(--border-radius);
+    padding: 10px 15px;
+    border: 1px solid #e0e0e0;
+    transition: var(--transition);
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 0.2rem rgba(34, 34, 34, 0.15);
+}
+
+.form-label {
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color) !important;
+    margin-top: auto;
+    padding: 25px 0 !important;
+}
+
+/* Book details page */
+.book-cover {
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+/* Login and Register pages */
+.auth-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Library page */
+.book-card {
+    height: 100%;
+}
+
+.badge {
+    font-weight: 500;
+    padding: 6px 10px;
+    border-radius: 4px;
+}
+
+/* Home page features */
+.feature-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+}
+
+/* Animation for cards and elements */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.row > div {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.row > div:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.row > div:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+/* Make tables more elegant */
+.table {
+    --bs-table-bg: transparent;
+}
+
+.table th {
+    font-weight: 600;
+    color: var(--primary-dark);
+}
+
+/* Category selector and filters */
+.form-select {
+    cursor: pointer;
+    background-color: white;
+}
+
+/* ===== ENHANCED CONTACT PAGE STYLING ===== */
+
+/* Custom font for contact page */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* Apply custom font to contact page */
+.col-md-6 h3, .col-md-6 h4, .col-md-6 h5 {
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+/* Enhanced contact info styling */
+.card-body h4, .card-body h5 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+/* Better icons for contact page */
+.card-body h4 i, .card-body h5 i {
+    font-size: 1.2rem;
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    margin-right: 12px;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+/* Icon hover animations */
+.card-body h4:hover i, .card-body h5:hover i {
+    transform: scale(1.1) rotate(5deg);
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Enhanced link styling for contact page */
+.card-body a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: var(--transition);
+    padding: 2px 2px;
+}
+
+.card-body a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.card-body a:hover {
+    color: var(--primary-dark);
+}
+
+.card-body a:hover::after {
+    width: 100%;
+}
+
+/* Contact form animations */
+.card-body form .form-control {
+    transform-origin: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-body form .form-control:focus {
+    transform: scale(1.01);
+}
+
+/* Map animation */
+.ratio-16x9 {
+    overflow: hidden;
+    border-radius: var(--border-radius);
+}
+
+.ratio-16x9 iframe {
+    transition: var(--transition);
+}
+
+.ratio-16x9:hover iframe {
+    transform: scale(1.02);
+}
+
+/* Button animation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.card-body form button {
+    transition: var(--transition);
+}
+
+.card-body form button:hover {
+    animation: pulse 1s infinite;
+}
+
+/* Library hours styling */
+.card-body h5:last-of-type {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Social media icons special styling */
+.card-body h5 i.fab {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+.card-body h5:hover i.fa-telegram {
+    background-color: #0088cc;
+}
+
+.card-body h5:hover i.fa-github {
+    background-color: #333;
+}
+
+/* Contact info card entrance animation */
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Form card entrance animation */
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Apply entrance animations to contact cards */
+.col-md-6:first-child .card {
+    animation: slideInLeft 0.6s ease-out forwards;
+}
+
+.col-md-6:last-child .card:first-child {
+    animation: slideInRight 0.6s ease-out forwards;
+}
+
+.col-md-6:last-child .card:last-child {
+    animation: slideInRight 0.6s 0.2s ease-out both;
+}
+
+/* Additional animations for contact information sections */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.card-body > div {
+    animation: fadeUp 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.card-body > div:nth-child(1) { animation-delay: 0.1s; }
+.card-body > div:nth-child(2) { animation-delay: 0.2s; }
+.card-body > div:nth-child(3) { animation-delay: 0.3s; }
+.card-body > div:nth-child(4) { animation-delay: 0.4s; }
+.card-body > div:nth-child(5) { animation-delay: 0.5s; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card-img-top {
+        height: 160px;
+    }
+    
+    .navbar-brand {
+        font-size: 1.1rem;
+    }
+    
+    .navbar-brand::before {
+        font-size: 1.3rem;
+    }
+}   

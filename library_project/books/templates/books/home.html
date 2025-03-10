@@ -1,0 +1,115 @@
+{% extends "books/base.html" %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="jumbotron bg-light p-5 rounded-3 mb-4">
+    <h1 class="display-4">Welcome to School 300 Library</h1>
+    <p class="lead">Your gateway to knowledge in Tashkent</p>
+    <hr class="my-4">
+    <p>Explore our collection of books and resources for students and teachers.</p>
+    <a class="btn btn-primary btn-lg" href="{% url 'library' %}" role="button">Browse Books</a>
+</div>
+
+<div class="row">
+    <div class="col-md-6 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h2 class="card-title">About School 300</h2>
+                <p class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisi vel consectetur 
+                    interdum, nisl nunc egestas nisi, euismod aliquam nisl nunc egestas nisi. Donec euismod, 
+                    nisi vel consectetur interdum, nisl nunc egestas nisi, euismod aliquam nisl nunc egestas nisi.
+                </p>
+                <p class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisi vel consectetur 
+                    interdum, nisl nunc egestas nisi, euismod aliquam nisl nunc egestas nisi.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h2 class="card-title">Our Mission</h2>
+                <p class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisi vel consectetur 
+                    interdum, nisl nunc egestas nisi, euismod aliquam nisl nunc egestas nisi. Donec euismod, 
+                    nisi vel consectetur interdum, nisl nunc egestas nisi, euismod aliquam nisl nunc egestas nisi.
+                </p>
+                <p class="card-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisi vel consectetur 
+                    interdum, nisl nunc egestas nisi, euismod aliquam nisl nunc egestas nisi.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card mb-4">
+    <div class="card-header bg-primary text-white">
+        <h3 class="mb-0">Library Features</h3>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="d-flex align-items-center">
+                    <div class="me-3">
+                        <i class="fas fa-book fa-2x text-primary"></i>
+                    </div>
+                    <div>
+                        <h4 class="mb-1">Digital Collection</h4>
+                        <p class="mb-0">Access to hundreds of digital books</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="d-flex align-items-center">
+                    <div class="me-3">
+                        <i class="fas fa-download fa-2x text-primary"></i>
+                    </div>
+                    <div>
+                        <h4 class="mb-1">Easy Downloads</h4>
+                        <p class="mb-0">Download books for offline reading</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="d-flex align-items-center">
+                    <div class="me-3">
+                        <i class="fas fa-users fa-2x text-primary"></i>
+                    </div>
+                    <div>
+                        <h4 class="mb-1">Community</h4>
+                        <p class="mb-0">Connect with fellow students</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-header bg-primary text-white">
+        <h3 class="mb-0">Recent Additions</h3>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            {% for i in "123" %}
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Sample Book Title</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Author Name</h6>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <a href="{% url 'library' %}" class="btn btn-sm btn-outline-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+<div class="card-body">
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th scope="row">Title:</th>
+                        <td>{{ book.title }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Author:</th>
+                        <td>{{ book.author }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Category:</th>
+                        <td>{{ book.category.name }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Publication Date:</th>
+                        <td>{{ book.publication_date }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th scope="row">File Format:</th>
+                        <td>PDF</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Added to Library:</th>
+                        <td>{{ book.created_at|date:"F d, Y" }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Last Updated:</th>
+                        <td>{{ book.updated_at|date:"F d, Y" }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
